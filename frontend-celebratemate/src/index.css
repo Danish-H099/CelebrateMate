@@ -1,0 +1,268 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------ Login Page ------------------------------------------------ */
+.login,
+.signup {
+  border: 1px solid black;
+  width: 32vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.login form input {
+  width: 80%;
+  height: 36px;
+  padding: 4px;
+  margin: 4px 0;
+  border-radius: 8px;
+  border: 0.2px solid black;
+}
+
+.login form .submit {
+  width: 30%;
+  height: 40px;
+  margin-top: 40px;
+  border: 0.2px solid black;
+  border-radius: 8px;
+}
+
+.login .submit:hover {
+  cursor: pointer;
+}
+
+/* ------------------------------------------- Signup --------------------------------------------------- */
+.signup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.signup form input {
+  width: 80%;
+  height: 36px;
+  padding: 4px;
+  margin: 4px 0;
+  border-radius: 8px;
+  border: 0.2px solid black;
+}
+
+.signup form .submit {
+  width: 30%;
+  height: 40px;
+  margin-top: 40px;
+  border-radius: 8px;
+}
+
+.signup .submit:hover {
+  cursor: pointer;
+}
+
+/* -----------------------------------------   Dashboard   ------------------------------------------- */
+
+.homepage {
+  border: 1px solid black;
+  width: 40vw;
+  margin: 100px auto;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.homepage h1 {
+  font-size: 36px;
+  font-weight: 300;
+}
+
+.homepage h2 {
+  font-size: 32px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.homepage p {
+  font-size: 18px;
+  margin-bottom: 22px;
+}
+
+.homepage img {
+  width: 150px;
+  margin-top: 18px;
+}
+
+
+/* ------------------   Navbar   ------------------ */
+.Navbar {
+  margin-top: 0;
+}
+
+.Navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid black;
+  background-color: rgb(222, 254, 248);
+  height: 5rem;
+  margin: 0;
+}
+
+.Navbar ul li {
+  font-size: 22px;
+  font-weight: 400;
+  padding: 8px;
+  margin: 0 20px;
+}
+
+.Navbar ul li a {
+  text-decoration: none;
+  color: rgb(162, 33, 154);
+}
+
+
+.Navbar ul li:first-child {
+  position: absolute;
+  left: 4px;
+}
+
+.Navbar ul li:first-child a {
+  color: black;
+  font-weight: 500;
+}
+
+.Navbar ul li:last-child a {
+  color: red;
+  font-weight: 500;
+}
+
+/* ------------------------------------------- My Contacts ------------------------------------------- */
+
+
+.Cards {
+  width: 80%;
+  min-height: 60vh;
+  font-size: 22px;
+  text-align: left;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.Cards h1 {
+  text-align: center;
+  font-weight: 250;
+  padding: 8px;
+  font-size: 36px;
+}
+
+.Card-Items {
+  padding: 8px;
+  margin: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: 450px;
+  min-width: 320px;
+  margin: 2px;
+  border: 1px solid rgb(174, 168, 168);
+  border-radius: 12px;
+  flex-basis: 0;
+  text-align: center;
+}
+
+.card img {
+  width: 320px;
+  height: 60%;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card h3 {
+  font-size: 25px;
+  font-weight: 250;
+  padding: 5px;
+  text-align: center;
+}
+
+.card p {
+  font-size: 17px;
+  padding: 5px;
+  margin: 0px;
+}
+
+.upload img{
+  display: block;
+  width: 67%;
+  height: 146px;
+  object-fit: cover;
+  margin: 42px auto 12px;
+}
+.upload form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+
+.upload form input {
+  width: 80%;
+  height: 25px;
+  padding: 8px;
+  margin: 4px auto;
+  border-radius: 6px;
+  border: 0.2px solid black;
+}
+
+
+.upload form button {
+  width: 99px;
+  height: 40px;
+  margin: 18px 0 14px;
+  padding: 8px;
+  /* margin: 4px auto; */
+  border-radius: 6px;
+  border: 0.2px solid black;
+}
+
+.card h2 {
+  font-size: 28px;
+  font-weight: 300;
+  text-align: center;
+}
+
+
+/* ---------------My Profile -------------- */
+
+.reminder {
+  border: 1px solid black;
+  width: 32vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+}
