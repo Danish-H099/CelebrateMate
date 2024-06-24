@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const ContactSchema = new Schema({
+const FriendSchema = new Schema({
     // Foreign Key Reference
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -18,5 +18,5 @@ const ContactSchema = new Schema({
     }
 });
 
-const Contacts = mongoose.model('contacts', ContactSchema);
-module.exports = Contacts;
+const Friends = mongoose.model('friends', FriendSchema);
+module.exports = Friends;

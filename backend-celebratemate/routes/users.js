@@ -12,8 +12,14 @@ router.post("/", async (req, res) => {
         const user = await collection.findOne({ email: email });
         console.log(user);
         if (user) {
-            // User exists, send back name and status
-            res.json({ status: "exist", name: user.name });
+            // Check if the password matches
+            if (password === user.password) {
+                // Password is correct, send back name and status
+                res.json({ status: "exist", name: user.name });
+            } else {
+                // Password is incorrect
+                res.json({ status: "wrongpassword" });
+            }
         } else {
             // User does not exist
             res.json({ status: "notexist" });
@@ -24,6 +30,7 @@ router.post("/", async (req, res) => {
         res.json({ status: "fail" });
     }
 });
+
 
 
 // POST /signup

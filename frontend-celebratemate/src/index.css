@@ -63,7 +63,7 @@ body {
   border: 0.2px solid black;
 }
 
-.signup form .submit {
+.signup form button {
   width: 30%;
   height: 40px;
   margin-top: 40px;

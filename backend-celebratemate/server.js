@@ -30,8 +30,8 @@ mongoose.connection.once('open', () => {
 
 // Import and use the user routes
 app.use('/api/users', require('./routes/users'));
-// Import and use the Contact routes
-app.use('/api/contacts', require('./routes/contacts'));
+// Import and use the friend routes
+app.use('/api/friends', require('./routes/friends'));
 
 
 
