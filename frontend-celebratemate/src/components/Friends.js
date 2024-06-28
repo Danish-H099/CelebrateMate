@@ -15,7 +15,7 @@ const Friend = () => {
                 const response = await axios.get("http://localhost:5000/api/friends/", {
                     params: { userId }
                 });
-                setFriends(response.data);
+                setFriends(response.data.reverse()); // Reverse the array to display most recent first
             } catch (error) {
                 console.error("Error fetching friends:", error);
             }
@@ -29,7 +29,7 @@ const Friend = () => {
         try {
             const newFriend = { userId, name, dob };
             const response = await axios.post("http://localhost:5000/api/friends/", newFriend);
-            setFriends([...friends, response.data]); // Add new Friend to the list
+            setFriends([response.data, ...friends]); // Add new Friend to the beginning of the list
             setName('');
             setDob('');
             
@@ -46,13 +46,6 @@ const Friend = () => {
             <div className="Cards">
                 <h1>My Friends</h1>
                 <div className="Card-Items">
-                    {friends.map(friend => (
-                        <div key={friend._id} className="card">
-                            <img src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?size=338&ext=jpg&ga=GA1.1.1141335507.1719100800&semt=ais_user" alt="Avatar" />
-                            <h3>{friend.name}</h3>
-                            <p>{new Date(friend.dob).toLocaleDateString()}</p>
-                        </div>
-                    ))}
                     <div className="card upload">
                         <h2>Add Friend with DOB</h2>
                         <img
@@ -77,6 +70,13 @@ const Friend = () => {
                             <button type="submit">Add Friend</button>
                         </form>
                     </div>
+                    {friends.map(friend => (
+                        <div key={friend._id} className="card">
+                            <img src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-859.jpg?size=338&ext=jpg&ga=GA1.1.1141335507.1719100800&semt=ais_user" alt="Avatar" />
+                            <h3>{friend.name}</h3>
+                            <p>{new Date(friend.dob).toLocaleDateString()}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

@@ -5,6 +5,7 @@ import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Friends from "./components/Friends"
 import Reminder from "./components/Reminder"
+import SetReminder from "./components/SetReminder"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/home" element={<Home/>}/>
           <Route path="/friends" element={<Friends/>}/>
           <Route path="/reminders" element={<Reminder/>}/>
+          <Route path="/setreminder" element={<SetReminder/>}/>
         </Routes>
       </Router>
     </div>

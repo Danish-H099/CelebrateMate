@@ -41,7 +41,6 @@ router.post("/signup", async (req, res) => {
         email: email,
         password: password,
     };
-    // console.log(data);
     console.log(data);
     try {
         const check = await collection.findOne({ email: email });

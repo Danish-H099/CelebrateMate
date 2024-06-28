@@ -5,7 +5,6 @@ const Users = require("../models/User"); // Ensure this path is correct
 
 // GET /api/friends - Fetch friends for a user
 router.get("/", async (req, res) => {
-    console.log("get");
     const { userId } = req.query;
     try {
         const user = await Users.findOne({ email: userId });
