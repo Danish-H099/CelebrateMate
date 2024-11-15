@@ -1,6 +1,7 @@
 // routes.js
 
 const express = require("express");
+const bcrypt = require("bcrypt");
 const router = express.Router();
 const collection = require("../models/User"); // Adjust the path based on your MongoDB setup
 
@@ -9,11 +10,14 @@ const collection = require("../models/User"); // Adjust the path based on your M
 router.post("/", async (req, res) => {
     const { email, password } = req.body;
     try {
+        // Find the user by email in the database
         const user = await collection.findOne({ email: email });
         console.log(user);
         if (user) {
-            // Check if the password matches
-            if (password === user.password) {
+            // Check if the password matches the hashed password
+            const isPasswordMatch = await bcrypt.compare(password, user.password);
+            
+            if (isPasswordMatch) {
                 // Password is correct, send back name and status
                 res.json({ status: "exist", name: user.name });
             } else {
@@ -36,10 +40,11 @@ router.post("/", async (req, res) => {
 // POST /signup
 router.post("/signup", async (req, res) => {
     const { name, email, password } = req.body;
+    const HashedPassword = await bcrypt.hash(password, 10);
     const data = {
         name: name,
         email: email,
-        password: password,
+        password: HashedPassword,
     };
     console.log(data);
     try {
